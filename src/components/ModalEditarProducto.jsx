@@ -9,10 +9,18 @@ const ModalEditarProducto = ({ producto, onUpdate, onCancel }) => {
   // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (window.confirm("¿Deseas actualizar este producto?"))
     // Llama a la función onUpdate pasada como prop, pasando los datos actualizados del producto
     onUpdate({ ...producto, nombre, descripcion });
     // Cierra el modal
     onCancel();
+  };
+  const handleActualizarAlerta = (index) => {
+    if (window.confirm("Deseas Actualizar este producto? " + index)) {
+      console.log("Se actualizo el producto: " + index);
+    }else{
+      console.log("Actualizacion cancelada por el usuario");
+    }
   };
 
   return (

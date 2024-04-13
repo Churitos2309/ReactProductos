@@ -43,6 +43,7 @@ const FormularioCrearProducto = ({ onCreate, isOpen, onClose }) => {
               Nombre:
             </label>
             <input
+              required  
               type="text"
               id="nombre"
               value={nombre}
@@ -51,10 +52,11 @@ const FormularioCrearProducto = ({ onCreate, isOpen, onClose }) => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="descripcion" className="block font-medium mb-1">
+            <label htmlFor="descripcion" className="block font-medium mb-1" >
               Descripcion:
             </label>
             <input
+              required
               type="text"
               id="descripcion"
               value={descripcion}

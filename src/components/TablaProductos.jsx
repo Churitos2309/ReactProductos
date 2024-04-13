@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TablaProductos = ({ productos, setProductos, onEditar, onEliminar }) => {
+const TablaProductos = ({ productos, onEditar, onEliminar }) => {
   const [busqueda, setBusqueda] = useState("");
   const [articulosPagina, setArticulosPagina] = useState(10);
   const [paginaActual, setPaginaActual] = useState(1);
@@ -37,9 +37,9 @@ const TablaProductos = ({ productos, setProductos, onEditar, onEliminar }) => {
           placeholder="Buscar"
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
-          className="px-4 py-2 border border-sky-100"
+          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
         />
-        <select value={articulosPagina} onChange={handleChange}>
+        <select value={articulosPagina} onChange={handleChange} className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
           <option value={5}>5</option>
           <option value={10}>10</option>
           <option value={15}>15</option>
