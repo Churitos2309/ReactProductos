@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
+Modal.setAppElement("#root");
+
 const FormularioCrearProducto = ({ onCreate, isOpen, onClose }) => {
   // Estados para almacenar los valores de los campos del formulario
   const [nombre, setNombre] = useState("");
@@ -20,18 +22,23 @@ const FormularioCrearProducto = ({ onCreate, isOpen, onClose }) => {
   };
 
   return (
-    <div className="flex items-center justify-center flex-col">
+    <div className="">
       <Modal
         isOpen={isOpen}
         onRequestClose={onClose}
-        className={"flex items-center justify-center flex-col w-3/5  border border-opacity-60"}
+        className={
+          "fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+        }
       >
-        <h2 className="text-lg font-semibold mb-4">Agregar Producto</h2>
         <form onSubmit={handleSubmit} className="w-auto ">
           {/* Campos de entrada para nombre, precio y cantidad */}
           {/* Los valores de los campos están enlazados con los estados correspondientes */}
           {/* Cuando se cambia el valor de un campo, se actualiza el estado correspondiente */}
           <div className="mb-4">
+            <h1 className="text-3xl font-bold text-center text-black-600">
+              Agregar Producto Nuevo
+            </h1>
+            <br />
             <label htmlFor="nombre" className="block font-medium mb-1">
               Nombre:
             </label>
@@ -66,19 +73,21 @@ const FormularioCrearProducto = ({ onCreate, isOpen, onClose }) => {
           />
         </div> */}
           {/* Boton para enviar el formulario */}
-          <button
-            onClick={onClose}
-            type="button"
-            className="bg-blue-500 text-white px-4 py-2 rounded-md"
-          >
-            Cancelar
-          </button>
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-md"
-          >
-            Agregar
-          </button>
+          <div className="flex justify-between">
+            <button
+              onClick={onClose}
+              type="button"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mr-2"
+            >
+              Cancelar
+            </button>
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+            >
+              Agregar
+            </button>
+          </div>
         </form>
       </Modal>
     </div>

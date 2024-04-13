@@ -1,4 +1,4 @@
-const datos = [
+const Datos = [
     { id: 1, nombre: 'Smartphone Samsing Galaxy S23', descripcion: 'Avanzdo y potente' },
     { id: 2, nombre: 'Auriculres Innlambricos Apple AirPods Pro', descripcion: 'Calidad de sonido superior' },
     { id: 3, nombre: 'Reloj inteligente Garmin Forerunner 955 ', descripcion: 'Rastrea tu actividad física' },
@@ -21,4 +21,4 @@ const datos = [
     { id: 20, nombre: 'Memoria USB SanDisk Extreme', descripcion: 'Rápida y confiable.' },
   ];
 
-  export default datos;
+  export default Datos;
